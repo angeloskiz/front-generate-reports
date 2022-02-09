@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">
+      <img class="img-width" src="https://c8.alamy.com/compes/hkg0g8/tese-de-logo-hkg0g8.jpg" />
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,13 +15,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">
+          <a class="nav-link active" routerLink="fingerprint">
             Lectura de huella
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            Lectura de QR
           </a>
         </li>
       </ul>
@@ -30,3 +27,11 @@
 <div>
   <router-outlet></router-outlet>
 </div>
+
+<style>
+.img-width {
+  margin: auto;
+  display: block;
+  width: 2rem;
+}
+</style>

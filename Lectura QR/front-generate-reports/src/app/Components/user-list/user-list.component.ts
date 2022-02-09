@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
   }
 
   goToGenerateEmail (userId: any) {
-    this.router.navigate(['user-info', 'list-detail', userId ]);
+    this.router.navigate(['user-info', 'activate-user', userId ]);
   }
 
   showActiveUser (active: String) {
