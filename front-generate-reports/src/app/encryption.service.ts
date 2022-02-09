@@ -4,18 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EncryptionService {
-  nombre: String;
-  apellido: String;
+  nombre: String = '';
+  apellido: String = '';
   
-  constructor (
-    nombre: String,
-    apellido: String
-  ) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-  }
+  constructor () {}
 
-  public obtenerClaveSecreta () {
+  public obtenerClaveSecreta (nombre: String, apellido: String) {
+    this.nombre = nombre
+    this.apellido = apellido
     return this.obtenerClaveGeneral();
   }
 

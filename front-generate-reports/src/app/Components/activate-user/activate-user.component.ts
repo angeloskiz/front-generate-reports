@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EncryptionService } from 'src/app/encryption.service';
 import { ServicesClienteService } from './services-cliente.service';
-// import * as CryptoJS from 'crypto-js';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-activate-user',
@@ -11,23 +11,29 @@ import { ServicesClienteService } from './services-cliente.service';
 
 export class ActivateUserComponent implements OnInit {
   title = 'Login';
+  secretKey:string = '';
   public ICliente!: Welcome;
   public IEmpleaod!: NumeroEmpleado;
 
   constructor(
     public api: ServicesClienteService,
-  ) { }
+    public service: EncryptionService
+  ) {
+
+  }
 
   ngOnInit(): void {
-    // console.log('Password: ', service.obtenerClaveSecreta())
+    this.secretKey = this.service.obtenerClaveSecreta('Sandra', 'Francisco')
     // Encriptar
-    /* let encrypted = CryptoJS.AES.encrypt("HolaMund0!", service.obtenerClaveSecreta());
+    let encrypted = CryptoJS.AES.encrypt("HolaMund0!", this.secretKey);
     console.log('encrypted: ', encrypted)
 
     // Desencriptar
-    var decrypted = CryptoJS.AES.decrypt(encrypted, service.obtenerClaveSecreta());
-    console.log('decrypted: ', decrypted) */
+    var decrypted = CryptoJS.AES.decrypt(encrypted, this.secretKey);
+    console.log('decrypted: ', decrypted)
   }
+
+
 
   public  ValidarCampos():void{
     const correo = (document.getElementById("txtCorroe") as HTMLInputElement).value;
