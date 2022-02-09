@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 import { EncryptionService } from './encryption.service';
 import { ServicesClienteService } from './Components/activate-user/services-cliente.service';
+import { UserListCrudComponent } from './Components/user-list-crud/user-list-crud.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ServicesClienteService } from './Components/activate-user/services-clie
     RecoverPasswordComponent,
     ModalScannerComponent,
     ActivateUserComponent,
-    FingerprintComponentComponent
+    FingerprintComponentComponent,
+    UserListCrudComponent
   ],
   imports: [
     BrowserModule,

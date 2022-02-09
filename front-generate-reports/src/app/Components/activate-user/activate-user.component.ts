@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EncryptionService } from 'src/app/encryption.service';
 import { ServicesClienteService } from './services-cliente.service';
 import * as CryptoJS from 'crypto-js';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-activate-user',
@@ -12,17 +13,21 @@ import * as CryptoJS from 'crypto-js';
 export class ActivateUserComponent implements OnInit {
   title = 'Login';
   secretKey:string = '';
+  userId: any = 'Hola'
   public ICliente!: Welcome;
   public IEmpleaod!: NumeroEmpleado;
 
   constructor(
     public api: ServicesClienteService,
-    public service: EncryptionService
+    public service: EncryptionService,
+    private activatedRoute: ActivatedRoute
   ) {
 
   }
 
   ngOnInit(): void {
+    this.userId = this.activatedRoute.snapshot.params.id
+    console.log('userId: ', this.userId)
     this.secretKey = this.service.obtenerClaveSecreta('Sandra', 'Francisco')
     // Encriptar
     let encrypted = CryptoJS.AES.encrypt("HolaMund0!", this.secretKey);
