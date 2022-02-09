@@ -1,0 +1,100 @@
+<div class="container-user-info">
+  <div class="row margin-top">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body content-QR">
+          <img class="img-style" src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" />
+          
+          <div class="text-info">
+            <p>Matricula:</p>
+            <span>201521825</span>
+          </div>
+
+          <div class="text-info">
+            <p>Nombre:</p>
+            <span>Sandy cortes</span>
+          </div>
+
+          <div class="qr-center">
+            <p>QR:</p>
+            <span>
+              <qrcode
+                [qrdata]="'qrValue'"
+                [width]="256"
+                [errorCorrectionLevel]="'M'"
+              >
+              </qrcode>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body content-info">
+          <div class="text-info">
+            <p>Edad:</p>
+            <span>24</span>
+          </div>
+
+          <div class="text-info">
+            <p>Sexo:</p>
+            <span>Femenino</span>
+          </div>
+
+          <div class="text-info">
+            <p>Sexo:</p>
+            <span>Femenino</span>
+          </div>
+
+          <div class="text-info">
+            <p>Dirección:</p>
+            <span>Av carmelo poerez 980</span>
+          </div>
+
+          <div class="text-info">
+            <p>Correo electronico:</p>
+            <span>sandrafcortes@outlook.com</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.container-user-info {
+  margin: 6% 4%;
+}
+.img-style {
+  margin: auto;
+  display: block;
+  width: 40%;
+}
+.content-info {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content-QR {
+  margin: 0 10%;
+}
+.qr-center {
+  text-align: center;
+}
+.text-info {
+  color: black !important;
+
+}
+.text-info p {
+  font-weight: 600;
+}
+
+.text-info span {
+  font-weight: 500;
+  color: gray;
+}
+</style>

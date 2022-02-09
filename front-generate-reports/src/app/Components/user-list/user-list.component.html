@@ -1,0 +1,154 @@
+<div class="container">
+
+  <!-- Button trigger modal -->
+
+<div [ngStyle]="{'display': display}" class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lectura de QR</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" (click)="openModal('none')"></button>
+      </div>
+      <div class="modal-body">
+        <qr-scanner
+          class="scanner-content"
+          [debug]="false"
+          [canvasWidth]="1080"
+          [canvasHeight]="720"
+          [stopAfterScan]="true"
+          [updateTime]="500"
+        >
+        </qr-scanner>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+      <div class="col">
+
+        <div class="content-tabs">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                [ngClass]="{'active': activeUser === 'true'}"
+                (click)="showActiveUser('true')"
+              >
+                Activos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                (click)="showActiveUser('false')"
+                [ngClass]="{'active': activeUser === 'false'}"
+              >
+                Por activar
+              </a>
+            </li>
+          </ul>
+          
+          <div class="content-icon">
+            <button class="button-style" (click)="openModal('block')">
+              <i class="fas fa-camera"></i>
+            </button>
+          </div>
+        </div>
+
+        <table *ngIf="activeUser === 'true'" class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Correo institucional</th>
+              <th scope="col">Detalles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>201521825@tese.edu.mx</td>
+              <td>
+                <button class="button-style" (click)="goToLink(1)">
+                  <i class="fas fa-plus-circle" (click)="goToLink(1)"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>201521825@tese.edu.mx</td>
+              <td>
+                <button class="button-style" (click)="goToLink(1)">
+                  <i class="fas fa-plus-circle" (click)="goToLink(1)"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table *ngIf="activeUser === 'false'" class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Generar correo institucional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>
+                <button class="button-style" (click)="goToGenerateEmail(1)">
+                  <i class="fas fa-at"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>
+                <button class="button-style" (click)="goToGenerateEmail(1)">
+                  <i class="fas fa-at"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+
+<style>
+.table tr td, th {
+  text-align: center;
+}
+.table tr td .fas {
+  cursor: pointer;
+} 
+.button-style {
+  background: transparent;
+  border: none;
+}
+.content-tabs {
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content-tabs .content-icon .button-style {
+  color: #F37C12;
+  font-size: 2em;
+  cursor: pointer;
+}
+.button-style {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+</style>
