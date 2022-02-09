@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viweport" content="width=device-width, initial-scale=1.0">
+    <title> Acceso Invitado </title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<center> <body bgcolor="#90ee90"> </center>
+
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+          <main class="form">
+            <form [formGroup]="Formulario1">
+             <center>  <h1 class="h3 mb-4 fw-normal" _msthash="522015" _mstecthash="529672">Crear una cuenta</h1> </center>
+             <center> <h1 class="h5 mb-4 fw-normal" _msthash="522015" _mstecthash="529672"> Acceso Invitado</h1> </center>
+              <center> <div class="form-floating"></center>
+                <input input id="Correo" type="text" class="form-control" placeholder="" aria-label=""  formControlName="correo">
+                <label for="Correo" _msthash="896038" _msttexthash="868153">Correo electronico</label>
+                <div  *ngIf="correo.errors && correo.touched" >
+                  <p *ngIf="correo.hasError('email')">
+                    Correo invalido
+                  </p>
+                  <p *ngIf="correo.hasError('required')">
+                    Campo requerido
+                  </p>
+                </div>
+
+              </div>
+              <div class="form-floating ">
+                <input input id="password" type="password" class="form-control" placeholder="" aria-label="" formControlName="password">
+                <label for="password" _msthash="896038" _msttexthash="868153">Contraseña</label>
+                <div  *ngIf="password.errors && password.touched" >
+                  <p *ngIf="password.hasError('required')">
+                    Password requerido
+                  </p>
+                  <p *ngIf="password.hasError('minlength')">
+                    Password debe tener minimo 5 caracteres
+                  </p>
+                  <p *ngIf="password.hasError('pattern')">
+                    Password debe tener al menos una mayuscula y un numero
+                  </p>
+                </div>
+              </div>
+              <div class="form-floating">
+                <input input id="Nombre" type="text" class="form-control" placeholder="" aria-label="" formControlName="nombre">
+                <label for="Nombre" _msthash="896038" _msttexthash="868153">Nombre(s)</label>
+                <div  *ngIf="nombre.errors && nombre.touched" >
+                  <p *ngIf="nombre.hasError('required')">
+                    Nombre requerido
+                  </p>
+                </div>
+              </div>
+              <div class="form-floating ">
+                <input input id="apellido_paterno" type="text" class="form-control" placeholder="" aria-label="" formControlName="apellido_paterno">
+                <label for="apellido_paterno" _msthash="896038" _msttexthash="868153">Apellido Paterno</label>
+                <div  *ngIf="apellido_paterno.errors && apellido_paterno.touched" >
+                  <p *ngIf="apellido_paterno.hasError('required')">
+                    Apellido paterno requerido
+                  </p>
+                </div>
+              </div>
+              <div class="form-floating ">
+                <input input id="apellido_materno" type="text" class="form-control" placeholder="Username" aria-label="Username" formControlName="apellido_materno">
+                <label for="apellido_materno" _msthash="896038" _msttexthash="868153">Apellido Materno</label>
+                <div  *ngIf="apellido_materno.errors && apellido_materno.touched" >
+                  <p *ngIf="apellido_materno.hasError('required')">
+                    Apellido materno requerido
+                  </p>
+                </div>
+                <hr>
+              </div>
+              <h5 class="h5 mb-4 fw-normal" _msthash="522015" _mstecthash="529672">Dirección</h5>
+
+              <div >
+                <form class="form-control">
+                  <label for="NOMBRE" _msthash="896038" _msttexthash="868153">Estado: </label>
+                  <select name="estados" id="estados" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" [(ngModel)]="opcionSeleccionado"
+                          (change)="onSelect()">
+                    <option value="0">Selecciona un estado...</option>
+                    <option *ngFor="let i of estados1" value={{i.id}}>{{i.nombreE}}</option>
+                  </select>
+                  <br>
+                </form>
+              </div>
+              <div>
+                <form class="form-control">
+                  <label  _msthash="896038" _msttexthash="868153">Municipio: </label>
+                  <select name="cars" id="cars1" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split">
+
+                    <option *ngFor="let i of municipios1" value={{i.id}}>{{li
+                      }}</option>
+                  </select>
+                  <br>
+                </form>
+              </div>
+
+
+              <div class="form-floating ">
+                <input input id="codigo_postal" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <label for="codigo_postal" _msthash="896038" _msttexthash="868153">Código Postal</label>
+              </div>
+              <div class="form-floating ">
+                <input input id="colonia" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <label for="colonia" _msthash="896038" _msttexthash="868153">Colonia</label>
+              </div>
+              <div class="form-floating ">
+                <input input id="calle" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <label for="calle" _msthash="896038" _msttexthash="868153">Calle</label>
+              </div>
+              <div class="form-floating ">
+                <input input id="n_exterior" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <label for="n_exterior" _msthash="896038" _msttexthash="868153">Número exterior</label>
+              </div>
+              <div class="form-floating ">
+                <input input id="n_interior" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <label for="n_interior" _msthash="896038" _msttexthash="868153">Número interior</label>
+              </div>
+              <br><hr>
+              <div class="form-floating ">
+                <input input id="telefono" type="text" class="form-control" placeholder="Username" aria-label="Username" formControlName="telefono" >
+                <label for="telefono" _msthash="896038" _msttexthash="868153">Teléfono</label>
+
+                <div  *ngIf="telefono.errors && telefono.touched" >
+                  <p *ngIf="telefono.hasError('required')">
+                    Teléfono requerido
+                  </p>
+                  <p *ngIf="telefono.hasError('pattern')">
+                    El teléfono debe contener 10 digitos numericos
+                  </p>
+                </div>
+              </div>
+              <div class="form-floating ">
+                <input input id="CURP" type="text" class="form-control" placeholder="Username" aria-label="Username" formControlName="CURP">
+                <label for="CURP" _msthash="896038" _msttexthash="868153">CURP</label>
+                <div  *ngIf="CURP.errors && CURP.touched" >
+                  <p *ngIf="CURP.hasError('required')">
+                    CURP requerido
+                  </p>
+                  <p *ngIf="CURP.hasError('pattern')">
+                    CURP no válido
+                  </p>
+                </div>
+              </div>
+              <hr>
+              <!--Boton registrarse-->
+              <br>
+              <div class="form-floating">
+                <button class="w-100 btn btn-lg btn-success" type="submit" _msthash="692302" _msttexthash="234910">Registrarse</button>
+              </div>
+            </form>
+            <br><br><br>
+          </main>
+        </div>
+      </div>
+<script src="bootstrap.bundle.min.js"></script>
+</body-imagen>
+</html>
