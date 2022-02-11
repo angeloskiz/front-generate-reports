@@ -1,0 +1,90 @@
+<div class="container margin-content">
+  <div [ngStyle]="{'display': display}" class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Crear personas</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" (click)="openModal('none')"></button>
+        </div>
+        <div class="modal-body">
+
+          <form class="mt-5" >
+            <div class="mb-3 float-top" >
+                  <input type="text"
+                         class="form-control form-control-lg" placeholder="Nombre">
+            </div>
+                <div class="mb-3 float-top" >
+                  <input type="text"
+                         class="form-control form-control-lg" placeholder="Apellido Paterno">
+                </div>
+                <div class="mb-3 float-top" >
+                  <input type="text"
+                         class="form-control form-control-lg" placeholder="Apellido Materno">
+                </div>
+                <div class="mb-3 float-top" >
+                  <input type="number"
+                         class="form-control form-control-lg" placeholder="Edad">
+                </div>
+                <div class="mb-3">
+                  <input type="text"
+                         class="form-control form-control-lg" placeholder="Sexo">
+                </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button (click)="openModal('none')"  class="btn btn-secondary btn-lg float-start">Volver</button>
+          <button type="submit" (click)="openModal('none')" class="btn btn-success btn-lg float-end">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <span class="titulo">Listado de Usuarios</span>
+      <button (click)="openModal('block')" class="btn btn-success float-end" routerLink="/crear-usuario">NUEVO</button>
+
+      <table class="table table-striped mt-5 ">
+
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Sexo</th>
+            <th scope="col"></th>
+
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Sandra</td>
+          <td>Francisco</td>
+          <td>Cortes</td>
+          <td>24 años</td>
+          <td>Mujer</td>
+       
+          <td>
+          <i class="fas fa-edit text-primary"></i>
+           <i class="fas fa-trash text-danger"></i>
+          </td>
+        </tr>
+
+
+        </tbody>
+      </table>
+     <!--h5 style="text-align: start; margin-top: 10px" *ngIf="listPersonas.length == 0">No hay Usuarios para mostrar</h5-->
+    </div>
+  </div>
+</div>
+
+<style>
+.margin-content {
+  margin: 5% auto;
+}
+.fas {
+ padding: 0 5px !important;
+}
+</style>
