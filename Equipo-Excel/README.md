@@ -1,27 +1,16 @@
-# ReadExcel
+Aqui podremos ver la generaci{on y lkectura de códigos QR, la cual tendra el siguiente flujo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+Observaremos la siguiente pantalla
 
-## Development server
+![image](https://user-images.githubusercontent.com/94713517/152714297-23e838d1-9ce7-408a-bb0f-e80dc9d47d16.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Donde el icono de camara, es el que nos ayudara a leer QR, ya que nos abrira un modal, de la siguiente forma
 
-## Code scaffolding
+![image](https://user-images.githubusercontent.com/94713517/152714446-17d47aab-8bbb-471c-b987-892401bdce56.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![image](https://user-images.githubusercontent.com/94713517/152714491-89ee5b75-2782-4d1f-b3f6-a108da895d85.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+El cual nos enviara a la siguiente pantalla, donde tendremos la información del usuario
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://user-images.githubusercontent.com/94713517/152714538-a3371cb0-7cea-4c26-b08b-28d8b5ef64fa.png)
