@@ -124,6 +124,22 @@
     </div>
 </div>
 
+<!-- Boton de seleccion de archivo excel -->
+ 
+<div class=".align-content-md-center">
+  <p><em>SELECCION DE ARCHIVO EN FORMATO EXCEL.</em></p>
+<input type = "file" (change)="onFileChange($event)"  multiple="false"/>
+<table  class="table">
+    <tbody>
+        <tr *ngFor="let row of data">
+            <td *ngFor="let val of row">
+                {{val}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
 <style>
 .table tr td, th {
   text-align: center;
